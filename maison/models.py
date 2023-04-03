@@ -11,23 +11,25 @@ CATEGORY =(
 ("C", "Chambre"),
 )
 class House(models.Model):
-    category = forms.ChoiceField(choices=CATEGORY)
-    image = models.CharField(max_length=500)
+    category = models.CharField(max_length = 30,default="categorie",choices=CATEGORY)
+    image = models.ImageField()
     price = models.FloatField()
     description = models.TextField()
     ville = models.CharField(max_length=50)
     quartier = models.CharField(max_length=200)
-    Nom_propio = models.CharField(max_length=50)
+    Nom_proprio = models.CharField(max_length=50)
     tel_proprio = models.IntegerField
     date_added =models.DateTimeField(auto_now=True)
 
-    class Meta:
-        ordering = ['-date_added']
+    def __str__(self):
+        return self.name
+    # class Meta:
+    #     ordering = ['-date_added']
 
 
 class meubles(models.Model):
     
-    image = models.CharField(max_length=500)
+    image = models.ImageField()
     price = models.FloatField()
     description = models.TextField()
     ville = models.CharField(max_length=50)
@@ -35,6 +37,7 @@ class meubles(models.Model):
     Nom_entreprise = models.CharField(max_length=50)
     tel_entreprise = models.IntegerField
     date_added =models.DateTimeField(auto_now=True)
-
-class Meta:
-    ordering = ['-date_added']
+    def __str__(self):
+        return self.name
+    class Meta:
+        ordering = ['-date_added']
