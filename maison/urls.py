@@ -19,7 +19,7 @@ router.register(r'meuble',views.meubleView, 'task')
 
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
     path('list_house',views.ListHouseView.as_view(), name='house'),
     path('create_house/',views.CreateHouseView.as_view(), name='create_house'),
     path('<pk>/update_house/',views.UpdateHouseView.as_view(), name='house_update'),

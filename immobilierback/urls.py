@@ -8,6 +8,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('maison.urls')),
+    path('api/', include('maison.urls')),
     path('admin/', admin.site.urls),
 ]
