@@ -31,11 +31,10 @@ class DeleteHouseView(DestroyAPIView):
     queryset= House.objects.all()
     serializer_class= houseSerializer
     
-    
 class meubleView(viewsets.ModelViewSet):
- 
     serializer_class = meublesSerializer
     queryset = meubles.objects.all()
+
 class ListMeubleView(ListAPIView):
     queryset= meubles.objects.all()
     serializer_class= meublesSerializer

@@ -8,7 +8,6 @@ import json
 CATEGORY =(
 ("M", "Maison"),
 ("A", "Studio"),
-("S", "Studio"),
 ("C", "Chambre"),
 )
 class House(models.Model):
